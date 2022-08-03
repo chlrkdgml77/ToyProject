@@ -10,4 +10,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background: linear-gradient(130deg, rgb(253, 253, 253), rgb(206, 185, 167));
 }
