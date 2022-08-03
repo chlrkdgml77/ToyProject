@@ -1,0 +1,54 @@
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 0rem;
+  justify-items: center;
+}
+
+.player-list {
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+}
+
+.img {
+  object-fit: contain;
+  height: 17rem;
+  width: 17rem;
+  display: block;
+  border: 2px solid black;
+}
+.player-info {
+  position: relative;
+}
+.player-info header {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  position: absolute;
+  top: -10%;
+  left: 13rem;
+  padding: 1rem;
+  background-color: rgb(255, 81, 0);
+  border: 0;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(252, 118, 56);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(165, 91, 42);
+  color: #fff;
+  margin-top: 0.5rem;
+}

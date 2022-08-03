@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0.5rem;
+  letter-spacing: 3px;
+  padding: 1rem;
+  cursor: pointer;
+  color: rgb(206, 135, 3);
+  transition: all 0.5s ease;
+}
+.btn:hover {
+  background-color: orange;
+  color: #fff;
+}
