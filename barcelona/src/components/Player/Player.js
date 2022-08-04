@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import styles from "./Player.module.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import PlayerDetail from "./PlayerDetail";
 
 const Player = (props) => {
   const [index, setIndex] = useState(0);
@@ -28,8 +29,17 @@ const Player = (props) => {
     return num;
   };
 
+  const [showDetail, setShowDetail] = useState(false);
+  const showDetailHandler = () => {
+    setShowDetail(true);
+  };
+  const hideDetailHandler = () => {
+    setShowDetail(false);
+  }
+
   return (
     <Fragment>
+      {showDetail && <PlayerDetail id={id} name={name} price={price} img={img} postion={postion} num={num} onClose={hideDetailHandler}></PlayerDetail>}
       <div className={styles.container}>
         <div className={styles.card}>
           <h3 className={styles.title}>{name}</h3>
@@ -39,7 +49,9 @@ const Player = (props) => {
           </div>
           <div className={styles.info}>
             <img src={img2} alt={name}></img>
-            <button className={styles.btn}>More...</button>
+            <button className={styles.btn} onClick={showDetailHandler}>
+              More...
+            </button>
           </div>
         </div>
         <div className={styles["button-container"]}>
