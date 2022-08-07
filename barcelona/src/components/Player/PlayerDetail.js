@@ -1,24 +1,26 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import Modal from "../Modal/Modal";
 import styles from "./PlayerDetail.module.css";
 import CartContext from "../../store/cart-context";
 
-const PlayerDetail = React.forwardRef((props, ref) => {
+const PlayerDetail = (props) => {
   const [amount, setAmount] = useState(0);
   const cartCtx = useContext(CartContext);
-  const amountInputRef = useRef();
+
+  const addHandler = () => {
+    setAmount(amount + 1);
+  }
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = parseInt(enteredAmount);
-
     cartCtx.addItem({
       id: props.id,
       name: props.name,
-      amount: enteredAmountNumber,
-      price: props.price
+      amount: amount,
+      price: props.price,
+      img2: props.img2,
+      postion: props.postion
     })
   };
 
@@ -33,11 +35,12 @@ const PlayerDetail = React.forwardRef((props, ref) => {
         <h4>{props.price}억</h4>
         <form className={styles.sub} onSubmit={submitHandler}>
           <img src={props.img}></img>
-          <button ref={amountInputRef}>+ ADD</button>
+          <button onClick={addHandler}>+ ADD</button>
+          <button onClick={props.onClose}>Close</button>
         </form>
       </div>
     </Modal>
   );
-});
+};
 
 export default PlayerDetail;

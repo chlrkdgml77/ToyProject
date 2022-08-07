@@ -3,6 +3,24 @@
   margin: 0;
   padding: 0;
 }
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-items li img {
+  width: 5rem;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text h3 {
+  font-size: 2rem;
+}
+.text p {
+  text-align: end;
+}
 
 .total {
   display: flex;

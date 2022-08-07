@@ -39,7 +39,7 @@ const Player = (props) => {
 
   return (
     <Fragment>
-      {showDetail && <PlayerDetail id={id} name={name} price={price} img={img} postion={postion} num={num} onClose={hideDetailHandler}></PlayerDetail>}
+      {showDetail && <PlayerDetail id={id} name={name} price={price} img={img} img2={img2} postion={postion} num={num} onClose={hideDetailHandler}></PlayerDetail>}
       <div className={styles.container}>
         <div className={styles.card}>
           <h3 className={styles.title}>{name}</h3>
